@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &181621159
+--- !u!1 &1816768308
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,7 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 181621160}
+  - component: {fileID: 1816768315}
   m_Layer: 0
   m_Name: FirePoint
   m_TagString: Bullet
@@ -16,21 +16,38 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &181621160
+--- !u!4 &1816768315
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 181621159}
+  m_GameObject: {fileID: 1816768308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.004, y: 0.092, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 3927090846607159028}
+  m_Father: {fileID: 3222816985870880546}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &7818578995271637603
+--- !u!114 &448508514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222816985870880556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a982adcad0c40c4499e6b4d98df96f71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 1816768315}
+  bulletPrefab: {fileID: 4256147671307496590, guid: eebb00d195f5e4f41963e43a25bda983,
+    type: 3}
+  bulletForce: 0.1
+  timeBetweenShots: 0.333333
+--- !u!1001 &8522858349873068981
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -40,7 +57,7 @@ PrefabInstance:
     - target: {fileID: 6556951312209687705, guid: 71d48408d294bda46ac81e15c256a8dc,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Player Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6556951312209687703, guid: 71d48408d294bda46ac81e15c256a8dc,
         type: 3}
@@ -99,9 +116,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71d48408d294bda46ac81e15c256a8dc, type: 3}
---- !u!4 &3927090846607159028 stripped
+--- !u!1 &3222816985870880556 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6556951312209687705, guid: 71d48408d294bda46ac81e15c256a8dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 8522858349873068981}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3222816985870880546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6556951312209687703, guid: 71d48408d294bda46ac81e15c256a8dc,
     type: 3}
-  m_PrefabInstance: {fileID: 7818578995271637603}
+  m_PrefabInstance: {fileID: 8522858349873068981}
   m_PrefabAsset: {fileID: 0}

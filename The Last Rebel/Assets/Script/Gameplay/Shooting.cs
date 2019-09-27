@@ -6,14 +6,17 @@ public class Shooting : MonoBehaviour
 {
     public Transform FirePoint;
     public GameObject bulletPrefab;
-    public float bulletForce = 10f;
+    public float bulletForce = .1f;
+    public float timeBetweenShots = .333333f;  // Allow 3 shots per secon
+    private float timestamp;
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Time.time >= timestamp && (Input.GetKey(KeyCode.Space)))
         {
             Shoot();
+            timestamp = Time.time + timeBetweenShots;
         }
     }
 

@@ -37,6 +37,8 @@ public class Chunk : MonoBehaviour
     public void SetPosition(Vector2Int _position) {
         position = _position;
 
+        gameObject.transform.position = new Vector2(position.x * ChunkManager.CHUNK_SIZE, position.y * ChunkManager.CHUNK_SIZE);
+
         Random.State exogenous_state = Random.state;
 
         Random.InitState((position.y % ChunkManager.MODULUS) * ChunkManager.MODULUS + (position.x % ChunkManager.MODULUS));

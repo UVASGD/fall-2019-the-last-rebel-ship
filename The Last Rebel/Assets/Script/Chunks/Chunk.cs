@@ -34,6 +34,10 @@ public class Chunk : MonoBehaviour
 
     #region Class Methods
 
+    protected int GetID() {
+        return (position.y % ChunkManager.MODULUS) * ChunkManager.MODULUS + (position.x % ChunkManager.MODULUS);
+    }
+
     public void SetPosition(Vector2Int _position) {
         position = _position;
 
@@ -41,7 +45,7 @@ public class Chunk : MonoBehaviour
 
         Random.State exogenous_state = Random.state;
 
-        Random.InitState((position.y % ChunkManager.MODULUS) * ChunkManager.MODULUS + (position.x % ChunkManager.MODULUS));
+        Random.InitState(GetID());
 
         prng = Random.state;
 

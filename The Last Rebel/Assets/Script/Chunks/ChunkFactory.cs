@@ -2,9 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class ChunkFactory
+public class ChunkFactory : MonoBehaviour
 {
-    public static Chunk ProduceChunk() {
-        return null;
+
+    public GameObject[] possibleChunks;
+
+    void Start() {
+
+    }
+
+    void Update() {
+
+    }
+
+    public Chunk ProduceChunk() {
+        int rand = Random.Range(0, possibleChunks.Length);
+
+        GameObject chunk = possibleChunks[rand];
+
+        GameObject instchunk = Instantiate(chunk);
+
+        return instchunk.GetComponent<Chunk>();
     }
 }

@@ -8,15 +8,17 @@ public class ChunkManager : MonoBehaviour
 
     public static readonly int MODULUS = 10;
 
-    public static readonly float CHUNK_SIZE = 10;
+    public static readonly float CHUNK_SIZE = 1;
 
-    public static readonly int MAX_LOADED_CHUNKS = 18;
+    public static readonly int MAX_LOADED_CHUNKS = 30;
 
     #endregion
 
     #region Instance Fields
 
     public GameObject player;
+
+    public ChunkFactory factory;
 
     private Vector2Int playerPosition;
 
@@ -31,6 +33,21 @@ public class ChunkManager : MonoBehaviour
         if(!player) {
             player = GameObject.FindGameObjectWithTag("Player");
         }
+
+        if(!factory) {
+            factory = FindObjectOfType<ChunkFactory>();
+        }
+
+        chunks = new Dictionary<Vector2Int, Chunk>();
+
+        playerPosition = new Vector2Int(
+            (int)(player.transform.position.x / CHUNK_SIZE),
+            (int)(player.transform.position.y / CHUNK_SIZE)
+        );
+
+        AllocateChunk(playerPosition);
+
+        RecalculateChunks();
     }
 
     // Update is called once per frame
@@ -59,6 +76,7 @@ public class ChunkManager : MonoBehaviour
     private void FreeChunk() {
         if (chunks.Count == 0) {
             Debug.Log("Something's fucky in the state of denmark");
+            return;
         }
 
         Vector2Int max_position = playerPosition;
@@ -77,11 +95,16 @@ public class ChunkManager : MonoBehaviour
     }
 
     private void AllocateChunk(Vector2Int position) {
-        if(chunks.Count > MAX_LOADED_CHUNKS) {
+
+        if(chunks.ContainsKey(position)) {
+            return;
+        }
+
+        if (chunks.Count > MAX_LOADED_CHUNKS) {
             FreeChunk();
         }
 
-        Chunk toAdd = ChunkFactory.ProduceChunk();
+        Chunk toAdd = factory.ProduceChunk();
 
         chunks[position] = toAdd;
 

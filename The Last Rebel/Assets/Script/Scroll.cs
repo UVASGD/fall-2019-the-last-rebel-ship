@@ -20,7 +20,7 @@ public class Scroll : MonoBehaviour
 
         Rigidbody2D playerRB = (Rigidbody2D)player.GetComponent("Rigidbody2D");
 
-        Vector2 offset = new Vector2(playerRB.velocity.x, playerRB.velocity.y);
+        Vector2 offset = new Vector2(speed * playerRB.position.x, speed * playerRB.position.y);
 
         GetComponent<Renderer>().material.mainTextureOffset = offset;
     }

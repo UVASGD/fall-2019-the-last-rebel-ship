@@ -12,8 +12,16 @@ public class PlayerMove : MonoBehaviour {
 
 	public Vector2 velovity;
 
+    KeyCode[] up = { KeyCode.UpArrow, KeyCode.W };
+    KeyCode[] left = { KeyCode.LeftArrow, KeyCode.A };
+    KeyCode[] down = { KeyCode.DownArrow, KeyCode.S };
+    KeyCode[] right = { KeyCode.RightArrow, KeyCode.D };
 
-	public Rigidbody2D rb;
+    KeyCode[] thruster = { KeyCode.LeftShift, KeyCode.I };
+    KeyCode[] brake = { KeyCode.LeftControl, KeyCode.K };
+
+
+    public Rigidbody2D rb;
 
 
 	private bool directionKeyPressedOnPrevious = false;
@@ -32,32 +40,34 @@ public class PlayerMove : MonoBehaviour {
 		bool directionKeyPressed = true;
 		previousDirection = direction;
 
-		if (Input.GetKey (KeyCode.UpArrow) && Input.GetKey (KeyCode.RightArrow)) {
+		if (CheckKeyset(up) && CheckKeyset(right)) {
 			direction = 7;
 		}
-		else if (Input.GetKey (KeyCode.UpArrow) && Input.GetKey (KeyCode.LeftArrow)) {
+		else if (CheckKeyset(up) && CheckKeyset(left)) {
 			direction = 1;
 		}
-		else if (Input.GetKey (KeyCode.DownArrow) && Input.GetKey (KeyCode.RightArrow)) {
+		else if (CheckKeyset(down) && CheckKeyset(right)) {
 			direction = 5;
 		}
-		else if (Input.GetKey (KeyCode.DownArrow) && Input.GetKey (KeyCode.LeftArrow)) {
+		else if (CheckKeyset(down) && CheckKeyset(left)) {
 			direction = 3;
 		}
-		else if (Input.GetKey (KeyCode.UpArrow)) {
+		else if (CheckKeyset(up)) {
 			direction = 0;
-		} else if (Input.GetKey (KeyCode.DownArrow)) {
+		} else if (CheckKeyset(down)) {
 			direction = 4;
-		} else if (Input.GetKey (KeyCode.LeftArrow)) {
+		} else if (CheckKeyset(left))
+        {
 			direction = 2;
-		} else if (Input.GetKey (KeyCode.RightArrow)) {
+		} else if (CheckKeyset(right))
+        {
 			direction = 6;
 		} else {
 			directionKeyPressed = false;
 		}
 
         bool brakeKeyIsPressed = false;
-        if(Input.GetKey(KeyCode.LeftShift))
+        if(CheckKeyset(brake))
         {
             brakeKeyIsPressed = true;
         }
@@ -65,10 +75,12 @@ public class PlayerMove : MonoBehaviour {
 		if (directionKeyPressed) {
 			float originalRotation = rb.rotation;
 
+
 			rb.MoveRotation (45.0f * direction);
 			if (previousDirection != direction) {
 				rb.velocity = RedirectInertia (rb.velocity, originalRotation, 45.0f * direction);
 			}
+            /*
 			if (rb.velocity.magnitude < maxSpeed) {
                 if (brakeKeyIsPressed)
                 {
@@ -79,11 +91,26 @@ public class PlayerMove : MonoBehaviour {
                     ActivateThrusters(1);
                 }
 			}
+            */
 			directionKeyPressedOnPrevious = true;
+
+            rb.angularVelocity = 0;
+
 		} else {
 			directionKeyPressedOnPrevious = false;
 		}
-	}
+
+        if(CheckKeyset(thruster))
+        {
+            if (rb.velocity.magnitude < maxSpeed)
+                ActivateThrusters(force);
+        }
+        if(CheckKeyset(brake))
+        {
+            ActivateThrusters(-force);
+        }
+
+    }
 
 	private void ActivateThrusters(float power)
 	{
@@ -112,5 +139,18 @@ public class PlayerMove : MonoBehaviour {
 
 		return newVelocity;
 	}
+
+    private bool CheckKeyset(KeyCode[] keys)
+    {
+        bool keyis = false;
+        foreach(KeyCode key in keys)
+        {
+            if(Input.GetKey(key))
+            {
+                keyis = true;
+            }
+        }
+        return keyis;
+    }
 
 }

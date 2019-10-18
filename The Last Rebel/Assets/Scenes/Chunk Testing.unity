@@ -505,6 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleChunks:
   - {fileID: 1911870038491858150, guid: 68dcc2e469bb74a72901901b1fc9468c, type: 3}
+  weightings: 01000000
 --- !u!114 &1921046734
 MonoBehaviour:
   m_ObjectHideFlags: 0

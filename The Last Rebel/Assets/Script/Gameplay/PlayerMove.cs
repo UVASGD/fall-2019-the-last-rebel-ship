@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMove : MonoBehaviour {
 
-
+	public int score = 0;
 	public float maxSpeed = 10.0f;
 	public float force = 1.0f;
 	public float mass = 10.0f;
@@ -19,9 +20,12 @@ public class PlayerMove : MonoBehaviour {
 
     KeyCode[] thruster = { KeyCode.LeftShift, KeyCode.I };
     KeyCode[] brake = { KeyCode.LeftControl, KeyCode.K };
+    public Text speedUI;
+	public Text scoreUI;
 
 
-    public Rigidbody2D rb;
+
+	public Rigidbody2D rb;
 
 
 	private bool directionKeyPressedOnPrevious = false;
@@ -31,13 +35,19 @@ public class PlayerMove : MonoBehaviour {
 	void Start () 
 	{
 		rb = GetComponent<Rigidbody2D> ();
+        speedUI.text = "Speed: 0";
+		scoreUI.text = "Score: 0";
+
+
 	}
-	
+
 	// Update is called once per frame
 	void Update () 
 	{
-
-		bool directionKeyPressed = true;
+        var velValue = rb.velocity;
+        speedUI.text = "Speed: " + velValue.magnitude.ToString();
+		scoreUI.text = "Score: " + score.ToString();
+        bool directionKeyPressed = true;
 		previousDirection = direction;
 
 		if (CheckKeyset(up) && CheckKeyset(right)) {

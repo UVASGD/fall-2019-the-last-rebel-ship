@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Shield : MonoBehaviour
@@ -13,10 +14,15 @@ public class Shield : MonoBehaviour
     int hitsLeft;
     float regenerationTimer;
     float cooldownTime;
+    Slider shieldHealth;
+    float shieldHP;
+
     // Start is called before the first frame update
     void Start()
     {
         cooldownTime = 5;
+        shieldHealth = GameObject.FindGameObjectWithTag("MainCanvas").GetComponentInChildren<Slider>();
+        shieldHP = 100;
 
         hitsLeft = 1;
         regenerationTimer = 0;
@@ -34,6 +40,8 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        shieldHealth.value = shieldHP;
+        shieldHP = shieldHP - 1;
         this.transform.position = player.transform.position;
         if (regenerationTimer > 0)
         {

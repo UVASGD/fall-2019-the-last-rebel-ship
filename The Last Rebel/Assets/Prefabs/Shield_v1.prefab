@@ -8,21 +8,21 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3564495621942166415}
+  - component: {fileID: 1821280704197196280}
   - component: {fileID: 3564495621942166414}
   - component: {fileID: 3564495621942166413}
   - component: {fileID: 3564495621942166412}
   - component: {fileID: 3564495621942166411}
   - component: {fileID: 3564495621942166512}
   m_Layer: 0
-  m_Name: Shield_v1 1
+  m_Name: Shield_v1
   m_TagString: Shield
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3564495621942166415
-Transform:
+--- !u!224 &1821280704197196280
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -35,6 +35,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 1, y: 1}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &3564495621942166414
 SpriteRenderer:
   m_ObjectHideFlags: 0

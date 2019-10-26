@@ -75,7 +75,7 @@ public class EnemyMove : MonoBehaviour
         {
 
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
-            Debug.Log("Did not Hit");
+            //Debug.Log("Did not Hit");
         }
 
     }

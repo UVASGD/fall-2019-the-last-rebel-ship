@@ -7,7 +7,7 @@ public class LastJedi : MonoBehaviour
 
     public Vector2 start_velocity;
 
-    public float power = 150f;
+    public float power = 75f;
 
     public float duration = 0.25f;
 

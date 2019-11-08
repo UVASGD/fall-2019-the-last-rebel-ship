@@ -614,6 +614,25 @@ MonoBehaviour:
     type: 3}
   bulletForce: 10
   timeBetweenShots: 0.333333
+--- !u!114 &875368937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875368935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fead4c1c3d8744265ab1f897bd983fab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 875368941}
+  FirePoint2: {fileID: 875368941}
+  FirePoint3: {fileID: 875368941}
+  bulletPrefab: {fileID: 19728189090210999, guid: c23a1a62e70b04b8bae27da3f575a067,
+    type: 3}
+  bulletForce: 10
+  timeBetweenShots: 0.333333
 --- !u!4 &875368941 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6556951312209687703, guid: 71d48408d294bda46ac81e15c256a8dc,

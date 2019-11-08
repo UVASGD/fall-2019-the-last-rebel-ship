@@ -7,24 +7,27 @@ public class Shield : MonoBehaviour
 {
 
     bool shieldActive;
+    bool shieldAvailable;
     CircleCollider2D myCollide;
     GameObject player;
     BoxCollider2D playerCollide;
     SpriteRenderer myRender;
-    int hitsLeft;
     float regenerationTimer;
     float cooldownTime;
-    Slider shieldHealth;
+    Slider shieldHealthBar;
     float shieldHP;
+    float healthcoef;
 
     // Start is called before the first frame update
     void Start()
     {
         cooldownTime = 5;
-        shieldHealth = GameObject.FindGameObjectWithTag("MainCanvas").GetComponentInChildren<Slider>();
-        shieldHP = 100;
-
-        hitsLeft = 1;
+        shieldHealthBar = GameObject.FindGameObjectWithTag("MainCanvas").GetComponentInChildren<Slider>();
+        shieldHP = 100.0f;
+        healthcoef = 5f; //rate at which the shield dies!
+        shieldAvailable = true;
+        
+        //hitsLeft = 1;
         regenerationTimer = 0;
         shieldActive = true;
         player = GameObject.FindWithTag("Player");
@@ -40,26 +43,47 @@ public class Shield : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        shieldHealth.value = shieldHP;
-        shieldHP = shieldHP - 1;
         this.transform.position = player.transform.position;
+
+        if (shieldActive) //if on, it dies over time
+        {
+            shieldHP -= healthcoef * Time.deltaTime; //shield dies over time...
+            shieldHealthBar.value = shieldHP;
+        }
+
+        //if shield WAS on and the HP went under 0, the shield should die and a regeneration time should be set to equal cooldown time
+        if (shieldHP<0 && shieldActive == true)
+        {
+            switchShieldState(); //shields need to turn off
+            shieldAvailable = false;
+            //hitsLeft--; //we don't
+            regenerationTimer = cooldownTime;
+        }
+
+        //if shield in process of regenerating, time until they are allowed should decrease
         if (regenerationTimer > 0)
         {
             regenerationTimer -= Time.deltaTime;
+
         }
-        else
+        else if(regenerationTimer<=0 && shieldAvailable==false) // if the end of the cooldown period, you can have a shield again, 
         {
-            hitsLeft = 1;
+            shieldHP = 100.0f;
+            //hitsLeft = 1;
+            shieldAvailable = true;
+            shieldHealthBar.value = shieldHP;
         }
 
-        if (Input.GetKeyDown(KeyCode.S) == true)
+        if (Input.GetKeyDown(KeyCode.Q) == true) //should generally toggle the shield
         {
-            if (hitsLeft <= 0 || regenerationTimer>0)
+            //should not turn shield on if it is dead :(
+            if (!shieldAvailable || regenerationTimer>0)
             {
                 Debug.Log("Your shield is dead sorry");
             }
             else
             {
+                //shieldHP = 100.0f;
                 switchShieldState();
             }
         }
@@ -78,15 +102,17 @@ public class Shield : MonoBehaviour
         myCollide.enabled = !myCollide.enabled;
         playerCollide.enabled = !playerCollide.enabled;
         myRender.enabled = !myRender.enabled;
+        shieldActive = !shieldActive;
     }
 
     void hitShield() {
         Debug.Log("Shields have been hit!");
-        hitsLeft--;
-
-        Invoke("switchShieldState", 1);
-
+        shieldHP -= 50; //the amount of damage the shield takes when hit
+        
+        //hitsLeft--;
+        //Invoke("switchShieldState", 1);
         //switchShieldState();
-        regenerationTimer = cooldownTime; // sets the timer so that you can't use the shield for a bit
+
+        //regenerationTimer = cooldownTime; // sets the timer so that you can't use the shield for a bit
     }
 }

@@ -105,7 +105,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 866f14df9db73463fb66fddae0ae07f9, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -138,11 +138,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfd0f5b4afa2bde42a4f0dbb7bb660b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  score: 0
   maxSpeed: 100
   force: 1
   mass: 10
   direction: 8
   velovity: {x: 0, y: 0}
+  speedUI: {fileID: 0}
+  scoreUI: {fileID: 0}
   rb: {fileID: 0}
 --- !u!114 &3564495621942166512
 MonoBehaviour:

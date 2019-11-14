@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 
 public class ShotgunShooting : MonoBehaviour
@@ -14,6 +16,7 @@ public class ShotgunShooting : MonoBehaviour
 	public float bulletForce = .1f;
 	public float timeBetweenShots = .333333f;  // Allow 3 shots per secon
 	private float timestamp;
+    public Text test;
 
 	// Update is called once per frame
 	void Update()
@@ -60,7 +63,7 @@ public class ShotgunShooting : MonoBehaviour
 		rb3.AddForce(left45 * force, ForceMode2D.Impulse);
 
 
-
+        test.text = (FirePoint.up * force).ToString();
 
     }
 }

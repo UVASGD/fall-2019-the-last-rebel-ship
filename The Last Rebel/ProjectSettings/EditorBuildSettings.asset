@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Death Testing.unity
     guid: 6e50d505ffeaa6446aaa91229a541cbc
+  - enabled: 1
+    path: Assets/Scenes/Death Scene.unity
+    guid: 87ea3b654ccc9754ea580077d357ff11
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: ea6789eb75069fa458b749c56e750d6e
+  - enabled: 1
+    path: Assets/Scenes/HomeScreen.unity
+    guid: 9ab9f16fcce1a0947b19e635156e03ae
   m_configObjects: {}

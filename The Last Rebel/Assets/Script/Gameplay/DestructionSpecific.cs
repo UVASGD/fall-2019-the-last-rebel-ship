@@ -11,7 +11,11 @@ public class DestructionSpecific : MonoBehaviour
     public string hitBoxName = "";
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.contacts[0].otherCollider.gameObject.transform.name == hitBoxName)
+        if (other.gameObject.GetComponent<EnemyBullet>() != null)
+        {
+            Destroy(other.gameObject);
+        }
+        else if (other.contacts[0].otherCollider.gameObject.transform.name == hitBoxName)
         {
             Debug.Log("hit");
             if (!hasBeenHit)

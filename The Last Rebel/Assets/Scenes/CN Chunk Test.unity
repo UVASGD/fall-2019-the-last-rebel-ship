@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   possibleChunks:
-  - {fileID: 8903413341948737255, guid: 10ed4d7bbd8254072a80988553c1f278, type: 3}
+  - {fileID: 8903413341948737255, guid: 6ea6e8266d27f41f2a0d0f8a0855e099, type: 3}
   weightings: 01000000
 --- !u!114 &33830628
 MonoBehaviour:

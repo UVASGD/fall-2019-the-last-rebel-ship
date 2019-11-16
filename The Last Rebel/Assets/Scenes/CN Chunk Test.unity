@@ -152,7 +152,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   possibleChunks:
   - {fileID: 8903413341948737255, guid: 6ea6e8266d27f41f2a0d0f8a0855e099, type: 3}
-  weightings: 01000000
+  - {fileID: 8903413341948737255, guid: 352f18b59438647b290ccc299bbb1ad6, type: 3}
+  - {fileID: 8903413341948737255, guid: c0db92e0c1b5f40f38408dc8e20f8c66, type: 3}
+  - {fileID: 8903413341948737255, guid: 907dd1603f2424241ae330a2560df7db, type: 3}
+  - {fileID: 8903413341948737255, guid: 10ed4d7bbd8254072a80988553c1f278, type: 3}
+  weightings: 0400000003000000030000000600000002000000
 --- !u!114 &33830628
 MonoBehaviour:
   m_ObjectHideFlags: 0

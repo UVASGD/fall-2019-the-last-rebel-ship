@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 477394589927505145}
   - component: {fileID: 2875128551160593658}
   m_Layer: 0
-  m_Name: Minefield
+  m_Name: Asteroid Field
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,6 +45,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numStars: 100
   star: {fileID: 1634671102959210, guid: 17fe3a1972c29bb4cb557cccc8127192, type: 3}
-  minMines: 100
-  maxMines: 150
-  mine: {fileID: 5999252046547271041, guid: e2a9f573551e7442a908dfd7fab2d0e7, type: 3}
+  minMines: 200
+  maxMines: 300
+  mine: {fileID: 4256147671307496590, guid: 5f0b334ecd5084817a422ec26fd794fb, type: 3}

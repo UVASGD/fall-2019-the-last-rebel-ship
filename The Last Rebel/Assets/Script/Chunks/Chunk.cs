@@ -11,7 +11,7 @@ public class Chunk : MonoBehaviour
 
     #region Instance Fields
 
-    public int numStars;
+    public int numStars = 300;
 
     public GameObject star;
 

@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 477394589927505145}
-  - component: {fileID: 2875128551160593658}
+  - component: {fileID: -8104056770011947052}
   m_Layer: 0
-  m_Name: Minefield
+  m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2875128551160593658
+--- !u!114 &-8104056770011947052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -40,11 +40,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8903413341948737255}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1da3320cc2ac7465cb7c533cd5f06320, type: 3}
+  m_Script: {fileID: 11500000, guid: 71f90df68d51d4d92b4cf32c689e45d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   numStars: 100
   star: {fileID: 1634671102959210, guid: 17fe3a1972c29bb4cb557cccc8127192, type: 3}
-  minMines: 30
-  maxMines: 60
-  mine: {fileID: 5999252046547271041, guid: e2a9f573551e7442a908dfd7fab2d0e7, type: 3}
+  bonusChance: 0.3
+  spawner: {fileID: 5920920426847499639, guid: 8709e6ad488f52e4281201fa94470636, type: 3}

@@ -32,7 +32,7 @@ public class Minefield : Chunk
 
             Vector2 spawnloc = new Vector2(r * Mathf.Cos(theta), r * Mathf.Sin(theta));
 
-            spawnloc += new Vector2(0.5f, 0.5f) * ChunkManager.CHUNK_SIZE;
+            //spawnloc += new Vector2(0.5f, 0.5f) * ChunkManager.CHUNK_SIZE;
 
             GameObject spawned = Instantiate(mine) as GameObject;
 

@@ -8,7 +8,7 @@ public class ChunkManager : MonoBehaviour
 
     public static readonly int MODULUS = 10;
 
-    public static readonly float CHUNK_SIZE = 50;
+    public static readonly float CHUNK_SIZE = 150;
 
     public static readonly int MAX_LOADED_CHUNKS = 30;
 

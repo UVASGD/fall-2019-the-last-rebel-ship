@@ -1090,6 +1090,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Overlay
       objectReference: {fileID: 0}
+    - target: {fileID: 4158311410604047293, guid: 92b3a1f1ba8e3364f89f9a53c4f1d28f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4158311410394656003, guid: 92b3a1f1ba8e3364f89f9a53c4f1d28f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1215,10 +1220,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -284.1
       objectReference: {fileID: 0}
-    - target: {fileID: 4158311410604047293, guid: 92b3a1f1ba8e3364f89f9a53c4f1d28f,
+    - target: {fileID: 180593051789284315, guid: 92b3a1f1ba8e3364f89f9a53c4f1d28f,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: m_RootOrder
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92b3a1f1ba8e3364f89f9a53c4f1d28f, type: 3}

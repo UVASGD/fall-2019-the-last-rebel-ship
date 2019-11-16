@@ -48,7 +48,7 @@ public class EnemyMove : MonoBehaviour
         Debug.DrawRay(transform.position, right45, Color.green);
         Debug.DrawRay(transform.position, left45, Color.blue);
         Debug.DrawRay(transform.position, raycastDir, Color.white);
-        Debug.Log(left45);
+        //Debug.Log(left45);
         var dir = target.position - transform.position;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);

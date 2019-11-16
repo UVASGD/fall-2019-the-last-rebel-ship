@@ -21,7 +21,7 @@ public class EnemyMove : MonoBehaviour
     {
         
         // Does the ray intersect any objects excluding the player layer
-        int layerMask = 2;
+        /*int layerMask = 2;
 
         Vector3 raycastDir = target.position - transform.position;
 
@@ -48,11 +48,11 @@ public class EnemyMove : MonoBehaviour
         Debug.DrawRay(transform.position, right45, Color.green);
         Debug.DrawRay(transform.position, left45, Color.blue);
         Debug.DrawRay(transform.position, raycastDir, Color.white);
-        //Debug.Log(left45);
+        Debug.Log(left45);*/
         var dir = target.position - transform.position;
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
-        if (Physics2D.Raycast(transform.position, raycastDir, layerMask))
+        /*if (Physics2D.Raycast(transform.position, raycastDir, layerMask))
         {
             if (!Physics2D.Raycast(topLeft, raycastDir, layerMask))
             {
@@ -72,11 +72,11 @@ public class EnemyMove : MonoBehaviour
 
 
         else
-        {
+        {*/
 
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
             //Debug.Log("Did not Hit");
-        }
+       // }
 
     }
 }

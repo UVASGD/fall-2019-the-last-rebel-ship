@@ -23,11 +23,11 @@ public class GravitySatellite : MonoBehaviour
                 continue;
             }
 
-            float force = (0.001f * this.rb.mass * body.rb.mass) / toBody.sqrMagnitude;
+            float force = (0.1f * this.rb.mass * body.rb.mass) / toBody.sqrMagnitude;
 
             sumForce += toBody.normalized * force;
         }
 
-        rb.AddForce(sumForce, ForceMode2D.Impulse);
+        rb.AddForce(sumForce, ForceMode2D.Force);
     }
 }

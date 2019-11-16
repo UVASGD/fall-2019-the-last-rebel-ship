@@ -46,6 +46,62 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.1
+--- !u!60 &6220101272839692638
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222816985870880556}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.2, y: 0.2}
+    newSize: {x: 0.2, y: 0.2}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0, y: 0}
+      - {x: -0.5, y: 2}
+      - {x: 0.5, y: 2}
+--- !u!114 &-167040376622085768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222816985870880556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be6bc09d7ac814e71af3a16e49fe8db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 1816768315}
+  gravWellBulletPrefab: {fileID: 2183222549213680303, guid: 60c79852b007f4995a2af5cc6aeea556,
+    type: 3}
+  bulletForce: 200
+--- !u!114 &-105715411786291467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3222816985870880556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ba93f8069e0c44928aadc19726df166, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &448508514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,12 +216,12 @@ PrefabInstance:
     - target: {fileID: 6556951312209687703, guid: 71d48408d294bda46ac81e15c256a8dc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -4.1071467
       objectReference: {fileID: 0}
     - target: {fileID: 6556951312209687703, guid: 71d48408d294bda46ac81e15c256a8dc,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.5
+      value: -15.4121065
       objectReference: {fileID: 0}
     - target: {fileID: 6556951312209687703, guid: 71d48408d294bda46ac81e15c256a8dc,
         type: 3}

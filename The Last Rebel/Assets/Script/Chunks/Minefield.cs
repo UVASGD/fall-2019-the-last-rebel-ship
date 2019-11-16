@@ -22,6 +22,8 @@ public class Minefield : Chunk
     }
 
     public override void Allocate() {
+        base.Allocate();
+
         int numMines = (int)(GetSeededRandomNumber() * (maxMines - minMines)) + minMines;
 
         for(int i = 0; i < numMines; i++) {

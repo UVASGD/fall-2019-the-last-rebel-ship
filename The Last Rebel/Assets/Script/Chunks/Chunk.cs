@@ -11,6 +11,10 @@ public class Chunk : MonoBehaviour
 
     #region Instance Fields
 
+    public int numStars;
+
+    public GameObject star;
+
     protected Vector2Int position;
     private Random.State prng;
 
@@ -67,7 +71,15 @@ public class Chunk : MonoBehaviour
     }
 
     public virtual void Allocate() {
+        for(int i = 0; i < numStars; i++) {
+            Vector2 spawnloc = new Vector2(GetSeededRandomNumber(), GetSeededRandomNumber()) - new Vector2(0.5f, 0.5f);
+            spawnloc *= ChunkManager.CHUNK_SIZE;
 
+            GameObject spawned = Instantiate(star) as GameObject;
+            spawned.transform.parent = this.transform;
+            spawned.transform.localPosition = spawnloc;
+            //spawned.transform.localScale = 5 * new Vector2(1 + GetSeededRandomNumber(), 1 + GetSeededRandomNumber());
+        }
     }
 
     public virtual void DeAllocate() {

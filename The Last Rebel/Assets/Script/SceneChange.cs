@@ -3,9 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChange : MonoBehaviour
 {
-    public void GotoMainScene()
+    public void GotoGameScene()
     {
-        SceneManager.LoadScene("main");
+        SceneManager.LoadScene("Game");
     }
 
     public void GotoHomeScreenScene()

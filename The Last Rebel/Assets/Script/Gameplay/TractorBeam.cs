@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TractorBeam : MonoBehaviour
 {
+    int tractorOn = 0;
     GameObject player;
     PolygonCollider2D polycol;
     Collider2D[] rh;
@@ -18,19 +19,32 @@ public class TractorBeam : MonoBehaviour
 
     void Update()
     {
-        rh = new Collider2D[10];
-        polycol.OverlapCollider(cf, rh);
-        for (int i = 0; i < rh.Length; i++)
+        if (Input.GetKeyDown(KeyCode.C))
         {
-            if (rh[i] != null && rh[i].name != "Player")
+            if (tractorOn == 0)
             {
-                GameObject enemy = GameObject.Find(rh[i].name);
-                Rigidbody2D enemyrb = enemy.GetComponent<Rigidbody2D>();
-                var enemypos = enemy.transform.position;
-                var playerpos = player.transform.position;
-                Vector2 dirvec2 = (playerpos - enemypos).normalized;
-                Vector2 forcevec = dirvec2 * 2;
-                enemyrb.AddForce(forcevec);
+                tractorOn = 1;
+            } else
+            {
+                tractorOn = 0;
+            }
+        }
+        if (tractorOn == 1)
+        {
+            rh = new Collider2D[10];
+            polycol.OverlapCollider(cf, rh);
+            for (int i = 0; i < rh.Length; i++)
+            {
+                if (rh[i] != null && rh[i].name != "Player")
+                {
+                    GameObject enemy = GameObject.Find(rh[i].name);
+                    Rigidbody2D enemyrb = enemy.GetComponent<Rigidbody2D>();
+                    var enemypos = enemy.transform.position;
+                    var playerpos = player.transform.position;
+                    Vector2 dirvec2 = (playerpos - enemypos).normalized;
+                    Vector2 forcevec = dirvec2 * 2;
+                    enemyrb.AddForce(forcevec);
+                }
             }
         }
     }

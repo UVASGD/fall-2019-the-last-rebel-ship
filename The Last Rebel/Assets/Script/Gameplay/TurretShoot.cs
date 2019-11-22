@@ -1,3 +1,4 @@
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -18,7 +19,7 @@ public class TurretShoot : MonoBehaviour
 
 
 
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -57,6 +58,5 @@ public class TurretShoot : MonoBehaviour
         rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }
-
 
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1376371398637360868}
   - component: {fileID: 4689875466607544407}
   - component: {fileID: 6224460107547503587}
+  - component: {fileID: -7730730439857103479}
   m_Layer: 0
   m_Name: SlowingEnemy
   m_TagString: Enemy
@@ -143,3 +144,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
+--- !u!114 &-7730730439857103479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7925865954112711015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1631f0d73e5ad44d19dcd54f4bdf02d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 4734130312429153090}
+  bulletPrefab: {fileID: 5265038232402696305, guid: 602031e6d773745c390e627ccd6e897a,
+    type: 3}
+  bulletForce: 5
+  range: 10
+  fireRate: 2
+  timeBetweenShots: 0

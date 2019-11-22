@@ -1,3 +1,4 @@
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,6 +42,7 @@ public class SlowingShooting : MonoBehaviour
 		Physics2D.IgnoreCollision(c, GetComponent<Collider2D>());
 		//Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
 		//rb.AddForce(FirePoint.up * bulletForce, ForceMode2D.Impulse);
-
+        
 	}
 }
+

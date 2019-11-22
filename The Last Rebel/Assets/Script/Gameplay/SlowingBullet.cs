@@ -1,3 +1,4 @@
+
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class SlowingBullet : MonoBehaviour
         {
             Destroy(gameObject);
             var vel = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().rb.velocity;
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().rb.velocity = -vel*3;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().rb.velocity = -vel * 3;
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().rb.angularVelocity = 0;
             directB = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>().direction;
             directB += 4;
@@ -28,10 +29,11 @@ public class SlowingBullet : MonoBehaviour
         }
     }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
         transform.Translate(direction * Time.deltaTime, Space.World);
 
     }
+
 }

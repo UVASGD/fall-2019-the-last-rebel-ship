@@ -41,8 +41,9 @@ public class PlayerMove : MonoBehaviour {
 
 	}
 
-	// Update is called once per frame
-	void Update () 
+
+    // Update is called once per frame
+    void Update () 
 	{
         var velValue = rb.velocity;
         speedUI.text = "Speed: " + velValue.magnitude.ToString();

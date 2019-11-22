@@ -10,9 +10,11 @@ public class Death : MonoBehaviour
     // Start is called before the first frame update
     private void OnCollisionEnter2D(Collision2D other)
     {
-
-        StartCoroutine(DeathParticles());
-        SceneManager.LoadScene("Death Scene");
+        if (other.gameObject.layer == 8)
+        {
+            StartCoroutine(DeathParticles());
+            SceneManager.LoadScene("Death Scene");
+        }
     }
 
     IEnumerator DeathParticles()

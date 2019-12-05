@@ -350,19 +350,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 356682667}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &356682669
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 356682668}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92f70f07d429d4ae69375ab8334e8337, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
 --- !u!61 &356682670
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -708,7 +695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 1421609202}
-  bulletPrefab: {fileID: 4256147671307496590, guid: eebb00d195f5e4f41963e43a25bda983,
+  bulletPrefab: {fileID: 5265038232402696305, guid: 602031e6d773745c390e627ccd6e897a,
     type: 3}
   bulletForce: 5
   range: 10
@@ -1187,7 +1174,7 @@ PrefabInstance:
     - target: {fileID: 5607489423469314886, guid: 92b3a1f1ba8e3364f89f9a53c4f1d28f,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0.0005255754
+      value: 0.000667165
       objectReference: {fileID: 0}
     - target: {fileID: 4158311410394656003, guid: 92b3a1f1ba8e3364f89f9a53c4f1d28f,
         type: 3}
